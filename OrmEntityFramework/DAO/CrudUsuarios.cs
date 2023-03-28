@@ -58,5 +58,23 @@ namespace OrmEntityFramework.DAO
 
         }
         }
+        public string EliminarUsuario(int id) {
+            using (OrmEntityFrameworkContext db =
+                    new OrmEntityFrameworkContext())
+            { 
+            var buscar = UsuarioIndividual(id);
+                if (buscar == null)
+                {
+                    return "El usuario no existe";
+                }
+                else {
+                    db.Usuarios.Remove(buscar);
+                    db.SaveChanges();
+                    return "El usuario se elimino";
+                }
+            
+                }
+            }
+
     }
 }

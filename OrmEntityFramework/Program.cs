@@ -10,6 +10,7 @@ Usuario Usuario = new Usuario();
 Console.WriteLine("Menu");
 Console.WriteLine("Pulse 1 para realizar insertar usuarios");
 Console.WriteLine("Pulse 2 para realizar una actualizacion de usuarios");
+Console.WriteLine("Pulse 3 para realizar una eliminacion de usuarios");
 var Menu = Convert.ToInt32(Console.ReadLine());
 
 
@@ -34,13 +35,13 @@ switch (Menu) {
     case 2:
         Console.WriteLine("Actualizar datos");
         Console.WriteLine("Ingresa el ID del usuario a actualizar");
-        var UsuarioIndividual = CrudUsuarios.UsuarioIndividual(Convert.ToInt32(Console.ReadLine()));
-        if (UsuarioIndividual == null)
+        var UsuarioIndividualU = CrudUsuarios.UsuarioIndividual(Convert.ToInt32(Console.ReadLine()));
+        if (UsuarioIndividualU == null)
         {
             Console.WriteLine("El usuario no existe");
         }
         else {
-            Console.WriteLine($"Nombre {UsuarioIndividual.Nombre} , Apellido {UsuarioIndividual.Apellido}");
+            Console.WriteLine($"Nombre {UsuarioIndividualU.Nombre} , Apellido {UsuarioIndividualU.Apellido}");
 
 
             Console.WriteLine("Para actulizar nombre coloca el # 1");
@@ -51,14 +52,37 @@ switch (Menu) {
             if (Lector == 1)
             {
                 Console.WriteLine("Ingrese el nombre");
-                UsuarioIndividual.Nombre = Console.ReadLine();
+                UsuarioIndividualU.Nombre = Console.ReadLine();
             }
             else {
                 Console.WriteLine("Ingrese el apellido");
-                UsuarioIndividual.Apellido= Console.ReadLine();
+                UsuarioIndividualU.Apellido= Console.ReadLine();
             }
-            CrudUsuarios.ActualizarUsuario(UsuarioIndividual, Lector);
+            CrudUsuarios.ActualizarUsuario(UsuarioIndividualU, Lector);
             Console.WriteLine("Actualizacion correcta");
+        }
+        break;
+    case 3:
+        Console.WriteLine("Ingresa el ID del usuario a eliminar");
+        var UsuarioIndividualD = CrudUsuarios.UsuarioIndividual(Convert.ToInt32(Console.ReadLine()));
+        if (UsuarioIndividualD == null)
+        {
+            Console.WriteLine("Este usuario no existe");
+        }
+        else {
+            Console.WriteLine("Eliminar usuario");
+            Console.WriteLine($"Nombre {UsuarioIndividualD.Nombre} , Apellido {UsuarioIndividualD.Apellido}");
+            Console.WriteLine("El usuario encontrado es el correcto?");
+            var Lector = Convert.ToInt32 (Console.ReadLine());
+            if (Lector == 1)
+            {
+                var Id = Convert.ToInt32(UsuarioIndividualD.Id);
+                Console.WriteLine(CrudUsuarios.EliminarUsuario(Id));
+            }
+            else {
+                Console.WriteLine("Inicia nuevamente");
+            }
+            
         }
         break;
 }
