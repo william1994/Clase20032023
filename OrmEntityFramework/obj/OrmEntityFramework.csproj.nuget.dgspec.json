@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\OrmEntityFramework.csproj": {}
+    "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\OrmEntityFramework.csproj": {}
   },
   "projects": {
-    "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\OrmEntityFramework.csproj": {
+    "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\OrmEntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\OrmEntityFramework.csproj",
+        "projectUniqueName": "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\OrmEntityFramework.csproj",
         "projectName": "OrmEntityFramework",
-        "projectPath": "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\OrmEntityFramework.csproj",
+        "projectPath": "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\OrmEntityFramework.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\obj\\",
+        "outputPath": "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

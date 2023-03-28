@@ -23,7 +23,7 @@ namespace OrmEntityFramework.DAO
         
         }
 
-        private Usuario UsuarioIndividual(int id) {
+        public Usuario UsuarioIndividual(int id) {
             using (OrmEntityFrameworkContext bd = new OrmEntityFrameworkContext()) {
             
             var buscar = bd.Usuarios.FirstOrDefault(x=>x.Id == id);
@@ -31,7 +31,7 @@ namespace OrmEntityFramework.DAO
                     return buscar;
             }
         }
-        public void ActualizarUsuario(Usuario ParamentrosUsuario) {
+        public void ActualizarUsuario(Usuario ParamentrosUsuario, int Lector) {
             using (OrmEntityFrameworkContext db =
                 new OrmEntityFrameworkContext()) {
 
@@ -41,7 +41,16 @@ namespace OrmEntityFramework.DAO
                  }
                 else 
                 {
-                buscar.Edad = ParamentrosUsuario.Edad;
+                    if (Lector == 1)
+                    {
+                        buscar.Nombre = ParamentrosUsuario.Nombre;
+                    }
+                    else {
+                        //Bug
+                        buscar.Apellido = ParamentrosUsuario.Apellido;
+                    }
+
+                //buscar.Edad = ParamentrosUsuario.Edad;
                 db.Update(buscar);
                 db.SaveChanges();
                

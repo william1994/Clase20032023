@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lNpG763IQ9+CKH/njxy3Xkyop6OxJu7vL1mXR8BibD49lfNiDfI+kQcFgcRsfRPO8Hx7RjWYl2KrdqLTDsR6NQ==",
+  "dgSpecHash": "YFiSMndHBn1hyyKW9YlIRh4TXu0YZ0436Ogm/R6PyfI66rgcfJ34KtAxXuKjMxMWGTETlNkb+yGk+MkHbFLfeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\William\\source\\repos\\OrmEntityFramework\\OrmEntityFramework.csproj",
+  "projectFilePath": "C:\\Users\\William\\Documents\\GitHub\\Clase20032023\\OrmEntityFramework\\OrmEntityFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

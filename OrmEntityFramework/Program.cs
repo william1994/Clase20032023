@@ -33,6 +33,31 @@ switch (Menu) {
         break;
     case 2:
         Console.WriteLine("Actualizar datos");
+        Console.WriteLine("Ingresa el ID del usuario a actualizar");
+        var UsuarioIndividual = CrudUsuarios.UsuarioIndividual(Convert.ToInt32(Console.ReadLine()));
+        if (UsuarioIndividual == null)
+        {
+            Console.WriteLine("El usuario no existe");
+        }
+        else {
+            Console.WriteLine($"Nombre {UsuarioIndividual.Nombre} , Apellido {UsuarioIndividual.Apellido}");
+
+
+            Console.WriteLine("Para actulizar nombre coloca el # 1");
+
+            Console.WriteLine("Para actulizar el apellido coloca el # 2");
+
+            var Lector = Convert.ToInt32(Console.ReadLine());
+            if (Lector == 1)
+            {
+                UsuarioIndividual.Nombre = Console.ReadLine();
+            }
+            else {
+                UsuarioIndividual.Apellido= Console.ReadLine();
+            }
+            CrudUsuarios.ActualizarUsuario(UsuarioIndividual, Lector);
+
+        }
         break;
 }
 //Usuario.Id = 3;
