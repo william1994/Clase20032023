@@ -45,7 +45,7 @@ namespace OrmEntityFramework.DAO
                     {
                         buscar.Nombre = ParamentrosUsuario.Nombre;
                     }
-                    else {
+                    else{
                         //Bug
                         buscar.Apellido = ParamentrosUsuario.Apellido;
                     }

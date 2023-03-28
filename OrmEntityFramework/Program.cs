@@ -50,13 +50,15 @@ switch (Menu) {
             var Lector = Convert.ToInt32(Console.ReadLine());
             if (Lector == 1)
             {
+                Console.WriteLine("Ingrese el nombre");
                 UsuarioIndividual.Nombre = Console.ReadLine();
             }
             else {
+                Console.WriteLine("Ingrese el apellido");
                 UsuarioIndividual.Apellido= Console.ReadLine();
             }
             CrudUsuarios.ActualizarUsuario(UsuarioIndividual, Lector);
-
+            Console.WriteLine("Actualizacion correcta");
         }
         break;
 }
