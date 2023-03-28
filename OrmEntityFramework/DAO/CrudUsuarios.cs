@@ -84,7 +84,27 @@ namespace OrmEntityFramework.DAO
                 return db.Usuarios.ToList();
             }
 
+        }
+        public bool Acceso(Usuario usuario) {
+            using (OrmEntityFrameworkContext db =
+                       new OrmEntityFrameworkContext())
+            {
+                var Acceder = db.Usuarios.Where(x => x.UsuarioN == usuario.UsuarioN &&
+                x.Contrasena == usuario.Contrasena
+                ).ToList();
+
+                return Acceder.Any() ? true : false;
+                //if (Acceder.Any())
+                //{
+                //    return true;
+                //}
+                //else { 
+                //    return false; 
+                //}
+
             }
 
+
+        }
     }
 }

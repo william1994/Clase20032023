@@ -12,4 +12,7 @@ public partial class Usuario
     public string? Apellido { get; set; }
 
     public int? Edad { get; set; }
+
+    public string? UsuarioN { get; set; }
+    public string? Contrasena { get; set; }
 }
