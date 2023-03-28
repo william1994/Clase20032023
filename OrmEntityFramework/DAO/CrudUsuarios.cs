@@ -76,5 +76,15 @@ namespace OrmEntityFramework.DAO
                 }
             }
 
+        public List<Usuario> ListarUsuarios()
+        {
+            using (OrmEntityFrameworkContext db =
+                   new OrmEntityFrameworkContext())
+            {
+                return db.Usuarios.ToList();
+            }
+
+            }
+
     }
 }
