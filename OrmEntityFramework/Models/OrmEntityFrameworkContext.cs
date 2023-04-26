@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using OrmEntityFramework.ViewModels;
 
 namespace OrmEntityFramework.Models;
 
@@ -16,6 +17,8 @@ public partial class OrmEntityFrameworkContext : DbContext
     }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Libro> Libro { get; set; }
+    public virtual DbSet<UsuarioLibroVM> UsuarioLibroVMs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -23,19 +26,21 @@ public partial class OrmEntityFrameworkContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Usuario>(entity =>
-        {
-            entity.ToTable("Usuario");
 
-            entity.Property(e => e.Apellido)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.Nombre)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-        });
+        modelBuilder.Entity<UsuarioLibroVM>().HasNoKey();
+        //modelBuilder.Entity<Usuario>(entity =>
+        //{
+        //    entity.ToTable("Usuario");
 
-        OnModelCreatingPartial(modelBuilder);
+        //    entity.Property(e => e.Apellido)
+        //        .HasMaxLength(50)
+        //        .IsUnicode(false);
+        //    entity.Property(e => e.Nombre)
+        //        .HasMaxLength(50)
+        //        .IsUnicode(false);
+        //});
+
+        //OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

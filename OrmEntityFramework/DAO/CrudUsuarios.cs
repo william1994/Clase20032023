@@ -1,4 +1,6 @@
-﻿using OrmEntityFramework.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using OrmEntityFramework.Models;
+using OrmEntityFramework.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,6 +106,15 @@ namespace OrmEntityFramework.DAO
 
             }
 
+
+        }
+
+        public List<UsuarioLibroVM> UsuarioLibroVM()
+        {
+            OrmEntityFrameworkContext db = new OrmEntityFrameworkContext();
+            var IdUsuario = 1003;
+            var ListadoDeUsurioConLibros = db.UsuarioLibroVMs.FromSqlRaw($"select us.Nombre,us.Apellido,ls.NombreLibro from Usuario as us inner join Libro as ls on us.Id = ls.IdUsuario where us.Id = {IdUsuario}").ToList();
+            return ListadoDeUsurioConLibros;
 
         }
     }

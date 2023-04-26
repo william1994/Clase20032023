@@ -6,6 +6,16 @@ using OrmEntityFramework.Models;
 CrudUsuarios CrudUsuarios = new CrudUsuarios();
 Usuario Usuario = new Usuario();
 
+var ListadoDeUsuarioConLibros =CrudUsuarios.UsuarioLibroVM();
+
+Console.WriteLine("Listado de libros del usuario william");
+foreach (var indice in ListadoDeUsuarioConLibros) {
+        
+        Console.WriteLine(indice.Nombre);
+        Console.WriteLine(indice.Apellido);
+        Console.WriteLine(indice.NombreLibro);
+}
+
 bool Continuar = true;
 while (Continuar)
 {
